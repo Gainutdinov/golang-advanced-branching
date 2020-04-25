@@ -89,6 +89,18 @@ func main() {
 	// Generate ratings for the different vehicles
 	generateRating()
 	// Print ratings for the different vehicles
+	for veh := range(inventory) {
+	    switch v:=veh.(type); v {
+		case car:
+				v.carDetails()
+		case bike:
+				v.bikeDetails()
+		case truck:
+				v.truckDetails()
+		default:
+				fmt.Printf("Are you sure this Vehicle Type exists")	
+		}
+	}
 
 }
 
