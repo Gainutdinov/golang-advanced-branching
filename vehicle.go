@@ -4,7 +4,7 @@ import (
 
 )
 
-type vehicle interface
+type vehicle interface{}
 
 type car struct {
     model string
@@ -24,7 +24,7 @@ type bike struct {
 
 // Values array for the feedback.json file
 type Values struct {
-    
+    Models []Model `json:"values"`
 }
 
 
@@ -35,6 +35,7 @@ type Model struct {
 }
 
 type feedbackResult struct {
+    feedbackTotal int
     feedbackPositive int
     feedbackNegative int
     feedbackNeutral int
@@ -70,7 +71,7 @@ func init() {
 		truck{"F-150", "Ford", "Truck"},
 		truck{"RAM1500", "Dodge", "Truck"}}
 
-//	vehicleResult = make(map[string]feedbackResult)
+	vehicleResult = make(map[string]feedbackResult)
 
 }
 
